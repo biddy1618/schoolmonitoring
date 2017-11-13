@@ -1,0 +1,31 @@
+<template name="studentsList">
+
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Students</li>
+    </ol>
+  <input type="text" name="filterGrade" id="filterGrade">
+	<div class="table-responsive">
+<table class="table table-striped" id="studentsList">
+	<thead><tr>
+		<th>id</th>
+		<th>name</th>
+		<th>surname</th>
+		<th>school</th>
+		<th>class</th>
+		<th></th>
+	</tr>
+</thead>
+<tbody>
+	{{#each students}}
+	{{>studentItem}}
+	{{/each}}
+</tbody>
+</table>
+</div>
+<script>
+        $( "#filterGrade" ).keypress(function() {
+          Session.set('filter_grade',document.getElementById('filterGrade').value || '');
+        });
+</script>
+</template>

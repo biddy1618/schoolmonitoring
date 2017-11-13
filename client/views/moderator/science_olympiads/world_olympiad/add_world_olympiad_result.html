@@ -1,0 +1,30 @@
+<template name="addWorldOlympiadResult">
+
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="{{pathFor "worldOlympiadResults"}}">World Olympiad Results</a></li>
+        <li class="active">Add result</li>
+    </ol>
+    <div class="table-responsive">
+        <table class="table table-striped" id="studentsList">
+            <thead><tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Class</th>
+                <th>Branch</th>
+                <th>prize</th>
+                <th>absolute place</th>
+                <th>host country</th>
+                <th>Trainer</th>
+                <th>add</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each students}}
+              {{> worldOlympiadStudentItem}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

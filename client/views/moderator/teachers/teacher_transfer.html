@@ -1,0 +1,62 @@
+<template name="teachersIn">
+  {{>moderatorTeachersMenu}}
+
+  <table class="table table-striped">
+      <thead>
+        <th>teacherId</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Branch</th>
+        <th>From</th>
+      </thead>
+      <tbody>
+        {{#if teachers}}
+        {{#each teachers}}
+          <tr>
+            <td>
+              {{_id}}
+            </td>
+            <td>{{name}}</td>
+            <td>{{surname}}</td>
+            <td>{{grade}}</td>
+            <td>{{previousSchool}}</td>
+            <td><button class="btn btn-xs btn-primary" id="accept">Accept</button><button class="btn btn-xs btn-danger" id="decline">Decline</button></td>
+          </tr>
+        {{/each}}
+        {{else}}
+        <p>no data to show...</p>
+        {{/if}}
+      </tbody>
+  </table>
+</template>
+
+<template name="teachersOut">
+  {{> moderatorTeachersMenu}}
+  <table class="table table-striped">
+    <thead>
+      <th>teacherId</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Branch</th>
+      <th>To</th>
+    </thead>
+    <tbody>
+      {{#if teachers}}
+      {{#each teachers}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{branch}}</td>
+        <td>{{newSchool}}</td>
+        <td><button class="btn btn-xs btn-danger" id="cancel">Cancel</button></td>
+      </tr>
+      {{/each}}
+      {{else}}
+      <p>no data to show...</p>
+      {{/if}}
+    </tbody>
+  </table>
+</template>

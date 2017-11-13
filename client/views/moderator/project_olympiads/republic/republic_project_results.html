@@ -1,0 +1,29 @@
+<template name="republicProjectResults">
+
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Republic Project Results</li>
+    </ol>
+    <a href="{{pathFor "addRepublicProjectResult"}}">Add</a>
+    <div class="table-responsive">
+        <table class="table table-striped" id="studentsList">
+            <thead><tr>
+                <th>Academic Year</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Class</th>
+                <th>Branch</th>
+                <th>attended for</th>
+                <th>Place</th>
+                <th>Trainer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each students}}
+              {{> republicProjectResultItem}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

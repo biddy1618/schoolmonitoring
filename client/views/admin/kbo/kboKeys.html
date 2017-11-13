@@ -1,0 +1,69 @@
+<template name="adminKboKeys">
+  {{> kboMenu}}
+  <br>
+  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+    Add variant
+  </button>
+  <table class="table table-striped">
+    <thead>
+      <th>Academic Year</th>
+      <th>KBO #{{no}}</th>
+      <th>Variant</th>
+      <th>Edit</th>
+    </thead>
+    <tbody>
+      {{#each variants}} {{> kboKeyItem}} {{/each}}
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add KBO Keys</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="lesson">Lesson</label>
+              <div class="col-sm-4">
+                <select class="form-control" name="lesson" id="lesson">
+                  {{#each lessons}}
+                  <option value="{{id}}">{{name}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="sm">Variant</label>
+              <div class="col-sm-2">
+                <input class="form-control" type="text" id="sm" name="variant">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="keys">Keys</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" id="keys" name="keys">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="save">Save</button>
+        </div>
+      </div>l
+    </div>
+  </div>
+</template>
+
+<template name="kboKeyItem">
+  <tr>
+    <td>{{academicYear}}</td>
+    <td>{{kboNo}}</td>
+    <td>{{variant}}</td>
+    <td>edit</td>
+  </tr>
+</template>

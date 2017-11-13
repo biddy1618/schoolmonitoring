@@ -1,0 +1,50 @@
+<template name="regionalOlympiadResults">
+
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Regional Olympiad Results</li>
+    </ol>
+    <a href="{{pathFor "addRegionalOlympiadResult"}}">Add</a>
+
+    <br>
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="previous"><span class="glyphicon glyphicon-arrow-left"></span></button>
+        <button type="button" class="btn btn-default">{{academicYear}}</button>
+        <button type="button" class="btn btn-default" id="next"><span class="glyphicon glyphicon-arrow-right"></span></button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          Select Branch <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped" id="studentsList">
+            <thead><tr>
+                <th>Academic Year</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Class</th>
+                <th>Branch</th>
+                <th>attended for</th>
+                <th>Place</th>
+                <th>Trainer</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each students}}
+              {{> regionalOlympiadResultItem}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

@@ -1,0 +1,63 @@
+<template name="studentsIn">
+  {{> moderatorStudentsMenu}}
+  {{#if student_set}}
+  <table class="table table-striped">
+      <thead>
+        <th>studentId</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Grade</th>
+        <th>From</th>
+      </thead>
+      <tbody>
+
+        {{#each students}}
+          <tr>
+            <td>
+              {{_id}}
+            </td>
+            <td>{{name}}</td>
+            <td>{{surname}}</td>
+            <td>{{grade}}</td>
+            <td>{{previousSchool}}</td>
+            <td><button class="btn btn-xs btn-primary" id="accept">Accept</button><button class="btn btn-xs btn-danger" id="decline">Decline</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+  </table>
+  {{else}}
+  <p>no data to show...</p>
+  {{/if}}
+</template>
+
+<template name="studentsOut">
+  {{> moderatorStudentsMenu}}
+  {{#if students_set}}
+  <table class="table table-striped">
+    <thead>
+      <th>studentId</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Grade</th>
+      <th>To</th>
+    </thead>
+    <tbody>
+
+      {{#each students}}
+      <tr>
+        <td>
+          {{_id}}
+        </td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{grade}}</td>
+        <td>{{newSchool}}</td>
+        <td><button class="btn btn-xs btn-danger" id="cancel">Cancel</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <p>no data to show...</p>
+  {{/if}}
+</template>

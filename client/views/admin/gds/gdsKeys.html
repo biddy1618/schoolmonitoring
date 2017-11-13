@@ -1,0 +1,29 @@
+<template name="adminGdsKeys">
+  {{>gdsMenu}}
+  <a href="/coordinator/gds/{{no}}/1/keys/add" class="btn btn-primary btn-sm pull-right">Add day 1</a>
+  <a href="/coordinator/gds/{{no}}/2/keys/add" class="btn btn-primary btn-sm pull-right">Add day 2</a>
+  <table class="table table-striped">
+    <thead>
+      <th>Academic Year</th>
+      <th>BTS #</th>
+      <th>Variant</th>
+      <th>Day</th>
+      <th>Edit</th>
+    </thead>
+    <tbody>
+      {{#each variants}}
+      {{> gdsKeyItem}}
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="gdsKeyItem">
+  <tr>
+    <td>{{academicYear}}</td>
+    <td>{{gdsNo}}</td>
+    <td>{{variant}}</td>
+    <td>{{day}}</td>
+    <td>edit</td>
+  </tr>
+</template>

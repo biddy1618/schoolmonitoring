@@ -1,0 +1,12 @@
+<template name="teacherItem">
+	<tr>
+		<td>{{teacherId}}</td>
+		<td class="name">{{name}}</td>
+		<td class="surname">{{surname}}</td>
+		<td class="school">{{school}}</td>
+		<td class="branch">{{branch.name}}</td>
+		<td>{{email}}</td>
+		<td>{{password}}</td>
+		<td><a href="{{pathFor "editTeacher"}}">edit</a></td>
+	</tr>
+</template>

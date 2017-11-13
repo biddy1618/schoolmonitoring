@@ -1,0 +1,43 @@
+<template name="addGdsKeys">
+    {{> gdsMenu}}
+    <form role="form">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="variant">Variant</label>
+                    <input type="text" id="variant" class="form-control" placeholder="enter variant" name='variant'
+                           value="{{variant}}">
+                </div>
+                {{#each lessons}}
+                {{#isKaz value=lessonId}}
+                <div class="form-group">
+                  <label for="{{lessonId}}">{{name}}-қазақ тобы</label>
+                  <input class="form-control" type="text" id="{{lessonId}}" placeholder="{{name}}-қазақ тобы" name='{{lessonId}}_kaz'>
+                </div>
+                <div class="form-group">
+                  <label for="{{lessonId}}">{{name}}-орыс тобы</label>
+                  <input class="form-control" type="text" id="{{lessonId}}" placeholder="{{name}}-орыс тобы" name='{{lessonId}}_rus'>
+                </div>
+                {{else}}
+                <div class="form-group">
+                    <label for="{{lessonId}}">{{name}}</label>
+                    <input class="form-control" type="text" id="{{lessonId}}" placeholder="{{name}}" name='{{lessonId}}'>
+                </div>
+                {{/isKaz}}
+                {{/each}}
+            </div>
+        </div>
+        <div>
+            <a id="cancel" class="btn btn-sm btn-warning">Cancel</a>
+            <button type="submit" class="btn btn-sm btn-primary">Save</button>
+        </div>
+    </form>
+</template>
+
+<template name="isKaz">
+  {{#if isKaz value}}
+  {{> UI.contentBlock}}
+  {{else}}
+  {{> UI.elseBlock}}
+  {{/if}}
+</template>

@@ -1,0 +1,18 @@
+<template name="addLesson">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="{{pathFor "lessonsList"}}">Lessons</a></li>
+        <li class="active">Add lesson</li>
+    </ol>
+<form role="form">
+    <label for="inputLesson">Пән атауы</label>
+    
+      <input type="text" id="inputLesson" placeholder="Пән атауын енгізіңіз" name='name'>
+    
+     <label for="inputLessonNumber">Пән номері</label>
+  
+      <input type="text" id="inputLessonNumber" placeholder="Пән номерін енгізіңіз" name='id'>
+      <a id="cancel">Cancel</a> 
+      <button type="submit" >Save</button>
+</form>
+</template>

@@ -1,0 +1,29 @@
+<template name="lessonsList">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Lessons</li>
+    </ol>
+	<a type="button" href="{{pathFor "addLesson"}}"><span class="glyphicon glyphicon-plus"></span></a>
+    <div class="table-responsive">
+        <table class="table table-striped" id="lessonsList">
+		<thead><tr>
+		<th>ID</th>
+		<th>School</th>
+		<th>Edit</th>
+	</tr>
+</thead>
+<tbody>
+	{{#each lessons}}
+	{{>lessonItem}}
+	{{/each}}
+</tbody>
+</table>
+		</div>
+    <script>
+        $('#lessonsList').dynatable({
+          table: {
+    defaultColumnIdStyle: 'trimDash'
+  }
+        });
+    </script>
+</template>

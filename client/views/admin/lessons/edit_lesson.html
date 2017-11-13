@@ -1,0 +1,16 @@
+<template name="editLesson">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="{{pathFor "lessonsList"}}">Lessons</a></li>
+        <li class="active">Edit lesson</li>
+    </ol>
+<form role="form">
+    <label for="inputLesson">Мектептің аты</label>
+      <input type="text" id="inputLesson" placeholder="Мектеп атауын енгізіңіз" name='name' value="{{name}}">
+    <label for="inputLessonNumber">Мектептің номері</label>
+      <input type="text" id="inputLessonNumber" placeholder="Мектеп номерін енгізіңіз" name='id' value="{{id}}">
+      <a data-toggle="modal" data-target=".deleteLesson" id="deleteLesson">Delete</a>
+      <button type="submit" id='save'>Save</button>
+
+</form>
+</template>

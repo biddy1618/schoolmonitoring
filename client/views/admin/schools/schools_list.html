@@ -1,0 +1,26 @@
+<template name="schoolsList">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Schools</li>
+    </ol>
+		<a type="button" href="{{pathFor "addSchool"}}"><span class="btn btn-primary btn-sm">Add school</span></a>
+    <div class="table-responsive">
+		<table class="table table-striped" id="schoolsList">
+			<thead><tr>
+				<th>ID</th>
+				<th>School Name</th>
+				<th>Full School Name</th>
+				<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each schools}}
+			{{>schoolItem}}
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+<script>
+    $('#schoolsList').dynatable();
+</script>
+</template>

@@ -1,0 +1,55 @@
+<template name="kboResults">
+  {{> moderatorKboMenu}}
+  <br>
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" id="previous"><span class="glyphicon glyphicon-arrow-left"></span></button>
+      <button type="button" class="btn btn-default">{{academicYear}}</button>
+      <button type="button" class="btn btn-default" id="next"><span class="glyphicon glyphicon-arrow-right"></span></button>
+    </div>
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-default">7 grades</button>
+      <button type="button" class="btn btn-default">8 grades</button>
+      <button type="button" class="btn btn-default">9 grades</button>
+      <button type="button" class="btn btn-default">10 grades</button>
+      <button type="button" class="btn btn-default">11 grades</button>
+    </div>
+  </div>
+  {{#if day1results}}
+  <div class="table-responsive">
+  <table class="table table-condensed">
+    <thead>
+      <th class="table-header">Student ID</th>
+      <th class="table-header">Name</th>
+      <th class="table-header">Surname</th>
+      <th class="table-header">Grade</th>
+      {{#each day1}}
+      <th class="rotate"><div><span>{{name}}</span></div></th>
+      {{/each}}
+      {{#each day2}}
+      <th class="rotate"><div><span>{{name}}</span></div></th>
+      {{/each}}
+      <th class="rotate">
+        <div><span>Total</span></div>
+      </th>
+      </thead>
+    <tbody>
+
+      {{#each day1results}}
+      <tr>
+        <td>{{studentId}}</td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{grade}}</td>
+        {{#each answers}}
+         <td class="answers">{{result}}</td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{else}}
+No data to show...
+{{/if}}
+</template>

@@ -1,0 +1,12 @@
+<template name="moderatorTeacherItem">
+    <tr>
+        <td>{{_id}}</td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{branch.name}}</td>
+        <td>{{email}}</td>
+        <td>help</td>
+        <td><a href="{{pathFor "editTeacher"}}"><span class="glyphicon glyphicon-pencil"></span></a> <a href="#"><span style="color:red" class="glyphicon glyphicon-trash" id="deleteTeacher"></span></a></td>
+
+    </tr>
+</template>

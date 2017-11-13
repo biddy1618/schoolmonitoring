@@ -1,0 +1,43 @@
+<template name="worldOlympiadStudentItem">
+    <tr>
+        <td>{{studentId}}</td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{attendedFor}}</td>
+        <td>{{branch}}</td>
+        <td><select name="prize" id="">
+            <option value="">--</option>
+            <option value="3">bronze</option>
+            <option value="2">silver</option>
+            <option value="1">gold</option>
+        </select></td>
+        <td>
+            <select name="absolute" id="">
+                <option value="">--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+            </select>
+        </td>
+        <td>
+            {{teacher.name}} {{teacher.surname}}
+        </td>
+        {{#if posted}}
+            <td><button class="btn btn-sm btn-primary disabled" id="add">Saved</button></td>
+        {{else}}
+            <td><button class="btn btn-sm btn-primary" id="add">save</button></td>
+        {{/if}}
+            </tr>
+</template>

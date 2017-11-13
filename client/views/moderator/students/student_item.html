@@ -1,0 +1,29 @@
+<template name="moderatorStudentItem">
+	<tr>
+		<td>{{_id}}</td>
+		<td>{{en_name}}</td>
+		<td>{{en_surname}}</td>
+		<td>{{grade}}{{division}}</td>
+		<td>{{address}}</td>
+		<td>{{phoneNumber}}</td>
+		<td>{{fathersName}}</td>
+		<td>{{mothersName}}</td>
+		<td>
+
+            <select name="lesson" id="olympiadLesson">
+				{{#if notOlympiad}}
+                    <option value="" selected>Пән таңдаңыз</option>
+					{{#each lessons}}
+                        <option value="{{this.id}}">{{this.name}}</option>
+					{{/each}}
+				{{else}}
+					{{#each lessons}}
+                            <option value="{{this.id}}">{{this.name}}</option>
+					{{/each}}
+					<option value="-1">Remove olympiad</option>
+				{{/if}}
+            </select>
+		</td>
+		<td><a href="{{pathFor "editStudent"}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+	</tr>
+</template>

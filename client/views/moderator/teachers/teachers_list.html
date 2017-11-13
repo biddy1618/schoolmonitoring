@@ -1,0 +1,25 @@
+<template name="moderatorTeachersList">
+    {{> moderatorTeachersMenu}}
+    <div class="table-responsive">
+        <table class="table table-striped" id="teachersList">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Branch</th>
+                <th>Email</th>
+                <th>Class</th>
+                <th>
+                  Edit
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+      {{#each teachers}}
+        {{>moderatorTeacherItem}}
+      {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

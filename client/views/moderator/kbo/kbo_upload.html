@@ -1,0 +1,40 @@
+<template name="kboUpload">
+    {{> moderatorKboMenu}}
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-11">
+      <div class="panel panel-default">
+        <div class="panel-heading"><strong>Upload KBO</strong> <small>Bootstrap files upload</small></div>
+        <div class="panel-body">
+
+          <!-- Standar Form -->
+          <h4>Select KBO file from your computer</h4>
+              <div class="form-inline">
+              <div class="form-group">
+                <span class="btn btn-default btn-file">
+                Browse <input type='file' accept='text/plain' id="file">
+                </span>
+              </div>
+              <button type="submit" class="btn btn-sm btn-primary" id="kbo-upload">Upload KBO</button>
+            </div>
+          <!-- Upload Finished -->
+          <div class="js-upload-finished">
+            {{#if errors}}
+            <h3>Errors</h3>
+            {{/if}}
+            <div class="list-group">
+              {{#if errors}}
+              {{#each errors}}
+              <a href="#" class="list-group-item list-group-item-warning"><span class="badge alert-warning pull-right">Error</span>{{reason}}</a>
+              {{/each}}
+              {{else}}
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div> <!-- /container -->
+</template>

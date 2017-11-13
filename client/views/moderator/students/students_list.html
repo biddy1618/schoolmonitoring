@@ -1,0 +1,84 @@
+<template name="moderatorStudentsList">
+    {{> moderatorStudentsMenu}}
+    <br/>
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <label for="grades">Grade</label>
+            <select class="form-control" name="filter_grade" id="filter_grade">
+                <option value="">All classes</option>
+                <option value="7A">7A</option>
+                <option value="7B">7B</option>
+                <option value="8A">8A</option>
+                <option value="8B">8B</option>
+                <option value="9A">9A</option>
+                <option value="9B">9B</option>
+                <option value="10A">10A</option>
+                <option value="10B">10B</option>
+                <option value="11A">11A</option>
+                <option value="11B">11B</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="name">Email</label>
+            <input type="text" class="form-control" id="filter_name" placeholder="Enter name" name="filter_name">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="surname">Пароль</label>
+            <input type="text" class="form-control" id="filter_surname" placeholder="Enter surname" name="filter_surname">
+        </div>
+    </form>
+
+
+    <div class="table-responsive">
+  <table class="table table-striped" id="studentsList">
+	<thead><tr>
+		<th>id</th>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Class</th>
+		<th>Address</th>
+        <th>Phone Number</th>
+        <th>Fathers Name</th>
+        <th>Mothers Name</th>
+        <th>Olympiad</th>
+        <th>edit</th>
+	</tr>
+</thead>
+<tbody>
+  {{#if students}}
+	{{#each students}}
+	{{> moderatorStudentItem}}
+	{{/each}}
+  {{else}}
+  <p>students not found</p>
+  {{/if}}
+</tbody>
+</table>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Upload students</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+              <h4>Select excel file</h4>
+              <span class="file-input btn btn-default btn-file">
+                Browse&hellip; <input type="file" id="file">
+              </span>
+              <button  class="btn btn-sm btn-primary" id="student-upload">Upload students</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="transfer">Transfer</button>
+      </div>
+    </div>l
+  </div>
+</div>
+</template>

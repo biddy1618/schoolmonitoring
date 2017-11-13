@@ -1,0 +1,17 @@
+<template name="moderatorStudentsMenu">
+  <ul class="nav nav-tabs">
+    <li class="{{active.students}}"><a href="/moderator/students">Students</a></li>
+    <li class="{{active.transferIn}}"><a href="/moderator/students/in" id="in">Students In</a></li>
+    <li class="{{active.transferOut}}"><a href="/moderator/students/out" id="out">Students Out</a></li>
+    <li class="dropdown {{active.add}}">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        New Students<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/moderator/students/add">Add</a></li>
+        <li><a data-toggle="modal" data-target="#myModal">Import</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</template>

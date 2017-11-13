@@ -1,0 +1,33 @@
+<template name="internationalProjectStudentItem">
+    <tr>
+        <td>{{studentId}}</td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{grade}}{{division}}</td>
+        <td><select name="branch" id="">
+            {{#each lessons}}
+                    <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select></td>
+        <td><select name="prize" id="">
+            <option value="-1">--</option>
+            <option value="3">bronze</option>
+            <option value="2">silver</option>
+            <option value="1">gold</option>
+        </select></td>
+
+        <td>
+            <select name="teacherId" id="">
+                <option value="">Select teacher</option>
+                {{#each teachers}}
+                    <option value="{{teacherId}}">{{name}} {{surname}}</option>
+                {{/each}}
+            </select>
+        </td>
+        {{#if posted}}
+            <td><button class="btn btn-sm btn-primary disabled" id="add">Saved</button></td>
+        {{else}}
+            <td><button class="btn btn-sm btn-primary" id="add">save</button></td>
+        {{/if}}
+            </tr>
+</template>
